@@ -1,0 +1,63 @@
+unit UVendaCancelada;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, AdvMetroButton, Vcl.StdCtrls,
+  AdvSmoothPanel, AdvSmoothExpanderPanel, NxPageControl, Vcl.ExtCtrls,
+  NxScrollControl, NxCustomGridControl, NxCustomGrid, NxDBGrid, JvComponentBase,
+  JvDBGridExport;
+
+type
+  TFrmVCancelada = class(TForm)
+    SmPnlVCancel: TAdvSmoothExpanderPanel;
+    Label105: TLabel;
+    AdvMetroButton1: TAdvMetroButton;
+    ControlVenda: TNxGlyphPageControl;
+    TabNotas: TNxTabSheet;
+    TabSangrias: TNxTabSheet;
+    TabCancelamento: TNxTabSheet;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    TabVenda: TNxTabSheet;
+    pnl4: TPanel;
+    Edit1: TEdit;
+    grdExcelExport: TJvDBGridExcelExport;
+    NextDBGrid1: TNextDBGrid;
+    procedure AdvMetroButton1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmVCancelada: TFrmVCancelada;
+
+implementation
+uses
+  principal ;
+{$R *.dfm}
+
+procedure TFrmVCancelada.AdvMetroButton1Click(Sender: TObject);
+begin
+Close;
+end;
+
+procedure TFrmVCancelada.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+//freeandnil;
+end;
+
+procedure TFrmVCancelada.FormShow(Sender: TObject);
+begin
+  Left := (GetSystemMetrics(SM_CXSCREEN) - Width) div 2;
+  Top := (GetSystemMetrics(SM_CYSCREEN) - Height) div 2;
+ // Top :=  frmPrincipal.AdvSmoothButton4.top;
+end;
+
+end.

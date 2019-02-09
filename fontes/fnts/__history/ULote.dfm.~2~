@@ -1,0 +1,171 @@
+object FrmLote: TFrmLote
+  Left = 680
+  Top = 436
+  BorderStyle = bsNone
+  Caption = 'FrmLote'
+  ClientHeight = 233
+  ClientWidth = 566
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesigned
+  Visible = True
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  object rzpnl1: TRzPanel
+    Left = 0
+    Top = 0
+    Width = 566
+    Height = 233
+    Align = alClient
+    TabOrder = 0
+    ExplicitLeft = 640
+    ExplicitTop = 120
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object LbProd: TLabel
+      Left = 23
+      Top = 160
+      Width = 519
+      Height = 35
+      Caption = 'Produto'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowFrame
+      Font.Height = -29
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object LbCod: TLabel
+      Left = 32
+      Top = 23
+      Width = 105
+      Height = 35
+      Caption = 'CodPro'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowFrame
+      Font.Height = -29
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object lbEntrada: TLabel
+      Left = 72
+      Top = 92
+      Width = 114
+      Height = 19
+      Caption = 'Data Entreda:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowFrame
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object lblVenci: TLabel
+      Left = 32
+      Top = 119
+      Width = 146
+      Height = 19
+      Caption = 'Data Vencimento:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowFrame
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object lbLote: TLabel
+      Left = 110
+      Top = 67
+      Width = 68
+      Height = 19
+      Caption = 'N'#186' Lote:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowFrame
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object JvDBDateTimePicker1: TJvDBDateTimePicker
+      Left = 192
+      Top = 90
+      Width = 105
+      Height = 21
+      Date = 43014.881304143520000000
+      Time = 43014.881304143520000000
+      TabOrder = 0
+      DropDownDate = 43014.000000000000000000
+    end
+    object jvdbdtmpckr1: TJvDBDateTimePicker
+      Left = 192
+      Top = 117
+      Width = 105
+      Height = 21
+      Date = 43014.881304143520000000
+      Time = 43014.881304143520000000
+      TabOrder = 1
+      DropDownDate = 43014.000000000000000000
+    end
+    object dbedt1: TDBEdit
+      Left = 192
+      Top = 63
+      Width = 105
+      Height = 21
+      TabOrder = 2
+    end
+    object rzpnl2: TRzPanel
+      Left = 2
+      Top = 17
+      Width = 15
+      Height = 198
+      Align = alLeft
+      BorderSides = []
+      Color = clGray
+      TabOrder = 3
+      ExplicitTop = 43
+      ExplicitHeight = 212
+    end
+    object rzpnl3: TRzPanel
+      Left = 2
+      Top = 2
+      Width = 562
+      Height = 15
+      Align = alTop
+      BorderSides = []
+      Color = clGray
+      TabOrder = 4
+      ExplicitWidth = 999
+    end
+    object rzpnl4: TRzPanel
+      Left = 2
+      Top = 215
+      Width = 562
+      Height = 16
+      Align = alBottom
+      BorderSides = []
+      Color = clGray
+      TabOrder = 5
+      ExplicitTop = 280
+      ExplicitWidth = 999
+    end
+    object rzpnl5: TRzPanel
+      Left = 548
+      Top = 17
+      Width = 16
+      Height = 198
+      Align = alRight
+      BorderSides = []
+      Color = clGray
+      TabOrder = 6
+      ExplicitLeft = 448
+      ExplicitHeight = 263
+    end
+  end
+end

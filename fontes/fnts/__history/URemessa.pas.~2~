@@ -1,0 +1,58 @@
+unit URemessa;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, ZAbstractRODataset,
+  ZAbstractDataset, ZDataset, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TFrmRemessa = class(TForm)
+    ds1: TDataSource;
+    dbgrd1: TDBGrid;
+    QrRemessa: TZQuery;
+    wdstrngfld_item_remessaNºNOTA: TWideStringField;
+    wdstrngfld_item_remessaCFOP: TWideStringField;
+    dtfld_item_remessaDATA: TDateField;
+    fltfld_item_remessaVALOR_PRODUTOS: TFloatField;
+    wdstrngfld_item_remessaNATUREZA: TWideStringField;
+    intgrfld_item_remessaFIM_REMESSA: TIntegerField;
+    procedure dtfld_item_remessaDATAChange(Sender: TField);
+    procedure FormCreate(Sender: TObject);
+    procedure dbgrd1CellClick(Column: TColumn);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    DATA, NOTA : STRING;
+
+  end;
+
+var
+  FrmRemessa: TFrmRemessa;
+
+implementation
+uses
+ modulo;
+{$R *.dfm}
+
+procedure TFrmRemessa.dbgrd1CellClick(Column: TColumn);
+begin
+Nota := qrRemessa.fieldbyname('numero').asstring;
+Data := qrRemessa.fieldbyname('data').asstring;
+close;
+end;
+
+procedure TFrmRemessa.dtfld_item_remessaDATAChange(Sender: TField);
+begin
+FrmRemessa.caption := QrRemessa.Fieldbyname('NATUREZA').asstring;
+end;
+
+procedure TFrmRemessa.FormCreate(Sender: TObject);
+begin
+DATA := '';
+NOTA := '';
+end;
+
+end.

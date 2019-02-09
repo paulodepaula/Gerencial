@@ -1,0 +1,129 @@
+unit Ucnpf;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Buttons,
+  cyBaseSpeedButton, cyAdvSpeedButton;
+
+type
+  TFrmCnpf = class(TForm)
+    img1: TImage;
+    SBcnpj: TcyAdvSpeedButton;
+    SBcpf: TcyAdvSpeedButton;
+    procedure FormShow(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure SBcnpjClick(Sender: TObject);
+    procedure SBcpfClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmCnpf: TFrmCnpf;
+  bPessoa : boolean;
+
+implementation
+uses
+Cliente;
+{$R *.dfm}
+
+procedure TFrmCnpf.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+ if bPessoa then
+  begin
+    with frmcliente do
+    begin
+      LAPELIDO.caption := 'Fantasia:';
+      ltelefone1.caption := 'Telefone 01:';
+      ltelefone2.caption := 'Telefone 02:';
+      LRG.caption := 'IE:';
+      LCPF.caption := 'CNPJ:';
+      rrg.visible := false;
+      lnascimento.caption := 'Fundação:';
+
+      LFILIACAO.Enabled := false;
+      EFILIACAO.Enabled := false;
+      lestadocivil.Enabled := false;
+      ECIVIL.Enabled := false;
+      lconjuge.Enabled := false;
+      ECONJUGE.Enabled := false;
+      Label23.Enabled := false;
+      DBDateEdit1.Enabled := false;
+      lconvenio.Enabled := false;
+
+      lprofissao.caption := 'Ramo:';
+      lempresa.caption := 'Titular:';
+      lrenda.Enabled := false;
+      ERENDA.Enabled := false;
+
+      lsexo.Enabled := false;
+      combo_sexo.Enabled := false;
+      PnlCNPJ.Visible := True;
+      Timer1.Enabled := True;
+      medtEditCNPJ.SetFocus;
+    end;
+  end
+  else
+  begin
+  with frmcliente do
+    begin
+      LAPELIDO.caption := 'Apelido:';
+      ltelefone1.caption := 'Residencial';
+      ltelefone2.caption := 'Comercial:';
+      LRG.caption := 'RG:';
+      LCPF.caption := 'CPF';
+      rrg.visible := true;
+
+      lnascimento.caption := 'Nascimento:';
+
+      LFILIACAO.Enabled := true;
+      EFILIACAO.Enabled := true;
+      lestadocivil.Enabled := true;
+      ECIVIL.Enabled := true;
+      lconjuge.Enabled := true;
+      ECONJUGE.Enabled := true;
+      Label23.Enabled := true;
+      DBDateEdit1.Enabled := true;
+      lconvenio.Enabled := true;
+
+      lprofissao.caption := 'Profissão:';
+      lempresa.caption := 'Empresa:';
+      lrenda.Enabled := true;
+      ERENDA.Enabled := true;
+
+      lsexo.Enabled := true;
+
+      combo_sexo.Enabled := true;
+
+      CLI_PESSOA := 'FÍSICA';
+      CLI_CPF := '';
+      PNLcpf.Visible := True;
+      EditCaptcha.SetFocus;
+     if editcnpj.text <> '' then  Timer2.Enabled := True;
+
+    end;
+  end;
+end;
+
+procedure TFrmCnpf.FormShow(Sender: TObject);
+begin
+IMG1.picture.loadfromfile('c:\Store_protheus\server\img\cnpf.png');
+end;
+
+procedure TFrmCnpf.SBcnpjClick(Sender: TObject);
+begin
+bPessoa := true;
+close;
+end;
+
+procedure TFrmCnpf.SBcpfClick(Sender: TObject);
+begin
+bPessoa := false;
+close;
+end;
+
+end.

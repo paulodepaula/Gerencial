@@ -1,0 +1,48 @@
+unit ULote;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls,
+  Vcl.ComCtrls, JvExComCtrls, JvDateTimePicker, JvDBDateTimePicker,
+  Vcl.ExtCtrls, RzPanel;
+
+type
+  TFrmLote = class(TForm)
+    rzpnl1: TRzPanel;
+    LbProd: TLabel;
+    LbCod: TLabel;
+    JvDBDateTimePicker1: TJvDBDateTimePicker;
+    jvdbdtmpckr1: TJvDBDateTimePicker;
+    lbEntrada: TLabel;
+    lblVenci: TLabel;
+    dbedt1: TDBEdit;
+    lbLote: TLabel;
+    rzpnl2: TRzPanel;
+    rzpnl3: TRzPanel;
+    rzpnl4: TRzPanel;
+    rzpnl5: TRzPanel;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+
+  private
+    { Private declarations }
+  published
+
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmLote: TFrmLote;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmLote.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+Free;
+end;
+
+end.
